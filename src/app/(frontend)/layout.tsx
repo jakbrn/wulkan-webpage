@@ -1,9 +1,12 @@
 import React from 'react'
-import './styles.css'
+import './globals.css'
+import Header from '@/components/Header'
+import Footer from '@/components/Footer'
 
 export const metadata = {
-  description: 'A blank template using Payload in a Next.js app.',
-  title: 'Payload Blank Template',
+  description:
+    'Lubelska drużyna harcerska WULKAN. Drużyna należy do ZHR. Wulkan został założony w 1985 roku! Drużyna urzęduje w kościele na Poczekajce w Lublinie.',
+  title: 'Drużyna Harcerska WULKAN - ZHR Lublin',
 }
 
 export default async function RootLayout(props: { children: React.ReactNode }) {
@@ -12,7 +15,9 @@ export default async function RootLayout(props: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <body>
+        <Header />
         <main>{children}</main>
+        <Footer />
       </body>
     </html>
   )
