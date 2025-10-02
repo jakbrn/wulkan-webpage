@@ -23,7 +23,8 @@ export default async function HomePage() {
           fill
           className="object-cover object-center absolute inset-0 z-0 top-0 bottom-0"
           priority
-          quality={100}
+          fetchPriority="high"
+          sizes="100vw"
         />
         <div className="absolute inset-0 z-0 backdrop-blur-xs" />
         <div className="container mx-auto px-4 text-center z-10">
@@ -206,7 +207,7 @@ export default async function HomePage() {
 
             {/* 1,5% */}
             <Card className="hover:scale-105 transition-all duration-300 cursor-pointer group border border-gray-200 bg-white">
-              <Link href="/jeden-i-pol-procent" className="block h-full">
+              <Link href="/1-5-procent" className="block h-full">
                 <CardHeader className="flex flex-col items-center gap-2">
                   <span className="bg-gray-100 p-4 rounded-full shadow mb-2 group-hover:scale-110 transition-transform">
                     <svg

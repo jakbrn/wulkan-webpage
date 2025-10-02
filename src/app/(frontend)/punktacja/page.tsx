@@ -43,6 +43,7 @@ export default async function PunktacjaPage() {
           fill
           className="object-cover object-center absolute inset-0 z-0 top-0 bottom-0"
           priority
+          fetchPriority="high"
           sizes="100vw"
         />
         <div className="absolute inset-0 z-0 backdrop-blur-xs" />
