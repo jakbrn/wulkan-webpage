@@ -4,9 +4,30 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 
 export const metadata = {
-  description:
-    'Lubelska drużyna harcerska WULKAN. Drużyna należy do ZHR. Wulkan został założony w 1985 roku! Drużyna urzęduje w kościele na Poczekajce w Lublinie.',
-  title: 'Drużyna Harcerska WULKAN - ZHR Lublin',
+  description: 'Drużyna należąca do ZHR, działająca w kościele na Poczekajce w Lublinie.',
+  title: '4 LDH "Wulkan" im. św Franciszka Ksawerego',
+  openGraph: {
+    title: '4 LDH "Wulkan" im. św Franciszka Ksawerego',
+    description: 'Drużyna należąca do ZHR, działająca w kościele na Poczekajce w Lublinie.',
+    url: 'https://wulkan.lublin.pl',
+    siteName: '4 LDH "Wulkan"',
+    images: '/logo.svg',
+    locale: 'pl_PL',
+    type: 'website',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    nocache: false,
+    googleBot: {
+      index: true,
+      follow: true,
+      noimageindex: false,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 }
 
 export default async function RootLayout(props: { children: React.ReactNode }) {

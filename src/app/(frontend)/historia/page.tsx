@@ -1,9 +1,5 @@
-import Link from 'next/link'
 import React from 'react'
-import { Button } from '@/components/ui/button'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
-import { Badge } from '@/components/ui/badge'
-import Header from '@/components/Header'
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import Image from 'next/image'
 
 export default function HistoriaPage() {
@@ -85,7 +81,7 @@ W tym okresie drużyna zrealizowała swoje długoletnie marzenie, biorąc udzia�
           fill
           className="object-cover object-center absolute inset-0 z-0 top-0 bottom-0"
           priority
-          quality={100}
+          sizes="100vw"
         />
         <div className="absolute inset-0 z-0 backdrop-blur-xs" />
         <div className="container mx-auto px-4 text-center relative z-10">

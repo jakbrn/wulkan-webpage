@@ -6,6 +6,7 @@ import path from 'path'
 import { buildConfig } from 'payload'
 import { fileURLToPath } from 'url'
 import sharp from 'sharp'
+import { pl } from '@payloadcms/translations/languages/pl'
 
 import { Users } from './collections/Users'
 import { Media } from './collections/Media'
@@ -22,6 +23,9 @@ export default buildConfig({
     },
   },
   collections: [Users, Media, Patrols],
+  i18n: {
+    supportedLanguages: { pl },
+  },
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',
   typescript: {
