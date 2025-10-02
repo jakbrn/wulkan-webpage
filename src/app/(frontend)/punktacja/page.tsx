@@ -1,7 +1,5 @@
-import Link from 'next/link'
 import React from 'react'
-import { Button } from '@/components/ui/button'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { Card, CardContent } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import {
   Table,
@@ -11,66 +9,17 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table'
-import Header from '@/components/Header'
 import Image from 'next/image'
+import { getPayload } from 'payload'
+import config from '@/payload.config'
 
-export default function PunktacjaPage() {
-  // Przykładowe dane zastępów - w prawdziwej aplikacji pobierane z bazy danych
-  const zastepy = [
-    {
-      id: 1,
-      nazwa: 'Zastęp Orłów',
-      prowadzacy: 'pwd. Anna Kowalska',
-      punkty: 485,
-      pozycja: 1,
-      ostatnieAkcje: ['Zbiórka żywności', 'Rajd po Kazimierzu', 'Ćwiczenia pionierskie'],
-    },
-    {
-      id: 2,
-      nazwa: 'Zastęp Wilków',
-      prowadzacy: 'pwd. Piotr Nowak',
-      punkty: 442,
-      pozycja: 2,
-      ostatnieAkcje: ['Sprzątanie parku', 'Konkurs wiedzy harcerskiej', 'Pomoc w domu opieki'],
-    },
-    {
-      id: 3,
-      nazwa: 'Zastęp Sokołów',
-      prowadzacy: 'pwd. Maria Wiśniewska',
-      punkty: 398,
-      pozycja: 3,
-      ostatnieAkcje: ['Warsztaty survival', 'Turniej sportowy', 'Akcja charytatywna'],
-    },
-    {
-      id: 4,
-      nazwa: 'Zastęp Żubrów',
-      prowadzacy: 'pwd. Jan Kowalczyk',
-      punkty: 367,
-      pozycja: 4,
-      ostatnieAkcje: ['Wędrówka po Roztoczu', 'Nauka pierwszej pomocy', 'Gra terenowa'],
-    },
-    {
-      id: 5,
-      nazwa: 'Zastęp Rysiów',
-      prowadzacy: 'pwd. Katarzyna Mazur',
-      punkty: 334,
-      pozycja: 5,
-      ostatnieAkcje: ['Próby na sprawności', 'Obserwacje przyrody', 'Makramowe warsztaty'],
-    },
-  ]
-
-  const getMedalIcon = (pozycja: number) => {
-    switch (pozycja) {
-      case 1:
-        return '🥇'
-      case 2:
-        return '🥈'
-      case 3:
-        return '🥉'
-      default:
-        return '🏆'
-    }
-  }
+export default async function PunktacjaPage() {
+  const payload = await getPayload({ config })
+  const patrols = await payload.find({
+    collection: 'patrols',
+    sort: '-points',
+    limit: 100,
+  })
 
   const getBadgeColor = (pozycja: number) => {
     switch (pozycja) {
@@ -126,27 +75,39 @@ export default function PunktacjaPage() {
                   </TableRow>
                 </TableHeader>
                 <TableBody>
-                  {zastepy.map((zastep) => (
+                  {patrols.docs.map((patrol, index) => (
                     <TableRow
-                      key={zastep.id}
+                      key={patrol.id}
                       className={`hover:bg-gray-100 transition-all duration-200 ${
-                        zastep.pozycja % 2 === 0 ? 'bg-white' : 'bg-gray-50'
+                        (index + 1) % 2 === 0 ? 'bg-white' : 'bg-gray-50'
                       }`}
                     >
                       <TableCell className="text-center">
-                        <Badge className={`${getBadgeColor(zastep.pozycja)} font-bold`}>
-                          {zastep.pozycja}
+                        <Badge className={`${getBadgeColor(index + 1)} font-bold`}>
+                          {index + 1}
                         </Badge>
                       </TableCell>
-                      <TableCell className="font-semibold text-blue-900">{zastep.nazwa}</TableCell>
-                      <TableCell className="text-gray-700">{zastep.prowadzacy}</TableCell>
-                      <TableCell className="text-center font-bold">{zastep.punkty}</TableCell>
+                      <TableCell className="font-semibold text-blue-900">{patrol.name}</TableCell>
+                      <TableCell className="text-gray-700">{patrol.leader}</TableCell>
+                      <TableCell className="text-center font-bold">{patrol.points}</TableCell>
                     </TableRow>
                   ))}
                 </TableBody>
               </Table>
             </CardContent>
           </Card>
+          <div className="mt-4">
+            <p className="text-sm text-gray-600 italic text-center md:text-left">
+              Punktacja zaktualizowana dnia{' '}
+              {(() => {
+                const timestamps = patrols.docs
+                  .map((patrol) => new Date(patrol.updatedAt).getTime())
+                  .filter((t) => !isNaN(t))
+                if (timestamps.length === 0) return 'brak danych'
+                return new Date(Math.max(...timestamps)).toLocaleDateString('pl-PL')
+              })()}
+            </p>
+          </div>
         </div>
       </section>
     </div>
