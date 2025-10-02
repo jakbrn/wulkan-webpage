@@ -5,10 +5,8 @@ import React from 'react'
 import Image from 'next/image'
 
 import config from '@/payload.config'
-import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
-import Header from '@/components/Header'
 
 export default async function HomePage() {
   const headers = await getHeaders()
@@ -29,10 +27,10 @@ export default async function HomePage() {
         />
         <div className="absolute inset-0 z-0 backdrop-blur-xs" />
         <div className="container mx-auto px-4 text-center z-10">
-          <h2 className="text-6xl font-bold mb-8 leading-tight space-x-[0.5ch] text-secondary drop-shadow-2xl drop-shadow-black">
+          <h2 className="text-4xl md:text-6xl font-bold mb-8 leading-tight space-x-[0.5ch] text-secondary drop-shadow-2xl drop-shadow-black">
             <span>4</span>
             <span>Lubelska drużyna harcerzy</span>
-            <span className="text-7xl block bg-gradient-to-r from-blue-600 via-30% via-blue-700 to-red-600 bg-clip-text text-transparent mt-2">
+            <span className="text-6xl md:text-7xl block bg-gradient-to-r from-blue-600 via-30% via-blue-700 to-red-600 bg-clip-text text-transparent mt-2">
               WULKAN
             </span>
           </h2>

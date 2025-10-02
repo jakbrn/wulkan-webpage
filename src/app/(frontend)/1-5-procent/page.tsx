@@ -20,10 +20,10 @@ export default function OneFivePercentPage() {
         />
         <div className="absolute inset-0 z-0 backdrop-blur-xs" />
         <div className="container mx-auto px-4 text-center relative z-10">
-          <h2 className="text-5xl md:text-6xl font-bold text-primary-foreground mb-4 leading-tight">
+          <h2 className="text-4xl md:text-6xl font-bold text-primary-foreground mb-4 leading-tight">
             Przekaż <span className="text-blue-600">1,5%</span> podatku
           </h2>
-          <p className="text-xl text-primary-foreground max-w-4xl mx-auto leading-relaxed font-semibold">
+          <p className="text-lg md:text-xl text-primary-foreground max-w-4xl mx-auto leading-relaxed font-semibold">
             Możesz wesprzeć działalność drużyny harcerskiej WULKAN przekazując 1,5% swojego podatku
             dochodowego. To nic Cię nie kosztuje, a nam bardzo pomaga!
           </p>

@@ -89,13 +89,13 @@ W tym okresie drużyna zrealizowała swoje długoletnie marzenie, biorąc udzia�
         />
         <div className="absolute inset-0 z-0 backdrop-blur-xs" />
         <div className="container mx-auto px-4 text-center relative z-10">
-          <h2 className="text-6xl md:text-7xl font-bold bg-gradient-to-r from-blue-600 via-blue-700 to-red-600 bg-clip-text text-transparent mb-4 leading-tight flex justify-center gap-[0.2ch]">
+          <h2 className="text-4xl md:text-7xl font-bold bg-gradient-to-r from-blue-600 via-blue-700 to-red-600 bg-clip-text text-transparent mb-4 leading-tight flex justify-center gap-[0.2ch]">
             Historia
             <span className="block text-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
               Wulkanu
             </span>
           </h2>
-          <p className="text-xl text-primary-foreground max-w-4xl mx-auto leading-relaxed font-semibold">
+          <p className="text-lg md:text-xl text-primary-foreground max-w-4xl mx-auto leading-relaxed font-semibold">
             Poznaj 40-letnią historię 4 Lubelskiej Drużyny Harcerzy „Wulkan" im. św. Franciszka
             Ksawerego - od założenia przez braci Piekarczyków po współczesne sukcesy w ZHR.
           </p>
@@ -118,9 +118,9 @@ W tym okresie drużyna zrealizowała swoje długoletnie marzenie, biorąc udzia�
                   <div className="hidden md:block absolute left-2 top-15 w-0.5 h-full bg-gray-200 z-0 -translate-x-1/2"></div>
                 )}
 
-                <div className="flex items-start gap-6">
+                <div className="flex items-start gap-6 flex-col md:flex-row">
                   {/* Timeline dot and period info */}
-                  <div className="flex-shrink-0 text-center flex items-center gap-2 mt-7">
+                  <div className="flex-shrink-0 text-center flex items-center gap-2 mt-7 ml-2 md:ml-0">
                     <div className="w-4 h-4 bg-gray-400 rounded-full"></div>
                     <div className="text-sm font-medium text-gray-600">{period.period}</div>
                   </div>
@@ -180,7 +180,7 @@ W tym okresie drużyna zrealizowała swoje długoletnie marzenie, biorąc udzia�
           {/* Timeline container */}
           <div className="relative max-w-4xl mx-auto">
             {/* Central timeline line */}
-            <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-0.5 bg-gray-300 transform md:-translate-x-1/2"></div>
+            <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-0.5 bg-gray-300 transform -translate-x-1/2"></div>
 
             <div className="space-y-8">
               {[
@@ -257,7 +257,7 @@ W tym okresie drużyna zrealizowała swoje długoletnie marzenie, biorąc udzia�
               ].map((druzynowy, index) => (
                 <div key={index} className="relative">
                   {/* Timeline dot */}
-                  <div className="absolute left-6 md:left-1/2 w-3 h-3 transform md:-translate-x-1/2 -translate-y-1/2 top-1/2">
+                  <div className="absolute left-6 md:left-1/2 w-3 h-3 transform -translate-x-1/2 -translate-y-1/2 top-1/2">
                     <div className="w-3 h-3 bg-white border-2 border-blue-500 rounded-full"></div>
                   </div>
 
@@ -267,7 +267,7 @@ W tym okresie drużyna zrealizowała swoje długoletnie marzenie, biorąc udzia�
                       <div className="bg-white p-4 rounded-lg border border-gray-200 hover:shadow-md transition-shadow duration-200">
                         <div
                           className={
-                            'flex gap-2 items-end ' + (index % 2 === 0 ? 'flex-row-reverse' : '')
+                            'flex gap-2 items-end ' + (index % 2 === 0 ? 'md:flex-row-reverse' : '')
                           }
                         >
                           <h4 className="font-semibold text-gray-800">{druzynowy.name}</h4>

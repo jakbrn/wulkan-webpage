@@ -98,13 +98,13 @@ export default function PunktacjaPage() {
         />
         <div className="absolute inset-0 z-0 backdrop-blur-xs" />
         <div className="container mx-auto px-4 text-center relative z-10">
-          <h2 className="text-6xl md:text-7xl font-bold bg-gradient-to-r from-blue-600 via-blue-700 to-red-600 bg-clip-text text-transparent mb-4 leading-tight flex justify-center gap-[0.2ch]">
+          <h2 className="text-4xl md:text-7xl font-bold bg-gradient-to-r from-blue-600 via-blue-700 to-red-600 bg-clip-text text-transparent mb-4 leading-tight flex justify-center gap-[0.2ch]">
             Punktacja{' '}
             <span className="block text-gradient-to-r from-orange-500 to-red-600 bg-clip-text text-transparent">
               zastępów
             </span>
           </h2>
-          <p className="text-xl text-primary-foreground max-w-4xl mx-auto leading-relaxed font-semibold">
+          <p className="text-lg md:text-xl text-primary-foreground max-w-4xl mx-auto leading-relaxed font-semibold">
             Sprawdź aktulną punktację zastępów drużyny WULKAN. Punkty przyznawane są za udział w
             zbiórkach, akcjach społecznych, zdobywanie sprawności i aktywność harcerską.
           </p>
@@ -116,7 +116,7 @@ export default function PunktacjaPage() {
         <div className="container mx-auto px-4">
           <Card className="py-0">
             <CardContent className="p-0">
-              <Table>
+              <Table className="rounded-xl overflow-hidden">
                 <TableHeader>
                   <TableRow>
                     <TableHead className="w-16 text-center font-semibold">#</TableHead>
