@@ -93,24 +93,21 @@ export default function OneFivePercentPage() {
                   <CardDescription>Wpisz te dane w formularzu PIT-OP</CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-4">
-                  <div className="bg-gray-50 p-4 rounded-lg">
+                  {/* <div className="bg-gray-50 p-4 rounded-lg">
                     <label className="text-sm font-medium text-gray-500">Nazwa organizacji:</label>
                     <p className="font-semibold text-gray-800">
                       Związek Harcerstwa Rzeczypospolitej
                     </p>
-                  </div>
+                  </div> */}
 
                   <div className="bg-gray-50 p-4 rounded-lg">
                     <label className="text-sm font-medium text-gray-500">Numer KRS:</label>
-                    <p className="font-bold text-gray-800 text-xl">0000 XXX XXX</p>
-                    <p className="text-sm text-gray-600 mt-1">
-                      *Aktualny numer KRS - skontaktuj się z drużyną
-                    </p>
+                    <p className="font-bold text-gray-800 text-xl">0000 057 720</p>
                   </div>
 
                   <div className="bg-gray-50 p-4 rounded-lg">
                     <label className="text-sm font-medium text-gray-500">Cel szczegółowy:</label>
-                    <p className="font-semibold text-gray-800">Drużyna Harcerska WULKAN - Lublin</p>
+                    <p className="font-semibold text-gray-800">LUB 052</p>
                   </div>
                 </CardContent>
               </Card>
