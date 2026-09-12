@@ -11,8 +11,8 @@ export default function Footer() {
               wulkan.zhr@gmail.com
             </a>{' '}
             &bull;{' '}
-            <a href="tel:699848065" className="underline">
-              699 848 065
+            <a href="tel:573396100" className="underline">
+              573 396 100
             </a>
           </div>
           <div className="flex items-center gap-3 text-center">
