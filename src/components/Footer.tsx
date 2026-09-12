@@ -1,6 +1,15 @@
+'use client'
+
 import Image from 'next/image'
+import { useEffect, useState } from 'react'
 
 export default function Footer() {
+  const [year, setYear] = useState(new Date().getFullYear())
+
+  useEffect(() => {
+    setYear(new Date().getFullYear())
+  }, [])
+
   return (
     <footer className="w-full border-t bg-background/20 backdrop-blur-lg shadow p-4">
       <div className="container mx-auto flex flex-col md:flex-row items-center gap-6 text-sm text-muted-foreground">
@@ -16,9 +25,8 @@ export default function Footer() {
             </a>
           </div>
           <div className="flex items-center gap-3 text-center">
-            <div>
-              &copy; {new Date().getFullYear()} Drużyna Harcerska WULKAN. Wszelkie prawa
-              zastrzeżone.
+            <div suppressHydrationWarning>
+              &copy; {year} Drużyna Harcerska WULKAN. Wszelkie prawa zastrzeżone.
             </div>
           </div>
         </div>
